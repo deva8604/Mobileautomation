@@ -20,13 +20,14 @@
 | **Priority** | High |
 | **Markers** | `@positive`, `@smoke` |
 
-| Step | Action | Expected Result |
-|------|--------|-----------------|
-| 1 | Launch app and navigate to login screen | Login screen displayed |
-| 2 | Enter valid email: `bob@example.com` | Email field populated |
-| 3 | Enter valid password: `10203040` | Password field populated (masked) |
-| 4 | Hide keyboard | Keyboard dismissed |
-| 5 | Click Login button | Navigate to Products page |
+**Test Steps:**
+1. Launch app and navigate to login screen
+2. Enter valid email: `bob@example.com`
+3. Enter valid password: `10203040`
+4. Hide keyboard
+5. Click Login button
+
+**Expected Result:** User navigates to Products page successfully
 
 ---
 
@@ -39,11 +40,12 @@
 | **Priority** | High |
 | **Marker** | `@negative` |
 
-| Step | Action | Expected Result |
-|------|--------|-----------------|
-| 1 | Enter invalid email: `invalid@email` | Email field populated |
-| 2 | Enter password: `password123` | Password field populated |
-| 3 | Hide keyboard and click Login | Error message displayed |
+**Test Steps:**
+1. Enter invalid email: `invalid@email`
+2. Enter password: `password123`
+3. Hide keyboard and click Login
+
+**Expected Result:** Error message displayed for invalid email format
 
 ---
 
@@ -54,11 +56,12 @@
 | **Priority** | High |
 | **Marker** | `@negative` |
 
-| Step | Action | Expected Result |
-|------|--------|-----------------|
-| 1 | Enter email: `bob@example.com` | Email field populated |
-| 2 | Enter wrong password: `wrong_password` | Password field populated |
-| 3 | Hide keyboard and click Login | Error message displayed |
+**Test Steps:**
+1. Enter email: `bob@example.com`
+2. Enter wrong password: `wrong_password`
+3. Hide keyboard and click Login
+
+**Expected Result:** Error message displayed for incorrect password
 
 ---
 
@@ -69,11 +72,12 @@
 | **Priority** | High |
 | **Marker** | `@negative` |
 
-| Step | Action | Expected Result |
-|------|--------|-----------------|
-| 1 | Leave email field empty | Email field empty |
-| 2 | Enter password: `secret_sauce` | Password field populated |
-| 3 | Hide keyboard and click Login | Error: Username required |
+**Test Steps:**
+1. Leave email field empty
+2. Enter password: `secret_sauce`
+3. Hide keyboard and click Login
+
+**Expected Result:** Error message displayed - Username required
 
 ---
 
@@ -84,11 +88,12 @@
 | **Priority** | High |
 | **Marker** | `@negative` |
 
-| Step | Action | Expected Result |
-|------|--------|-----------------|
-| 1 | Enter email: `bob@example.com` | Email field populated |
-| 2 | Leave password field empty | Password field empty |
-| 3 | Hide keyboard and click Login | Error: Password required |
+**Test Steps:**
+1. Enter email: `bob@example.com`
+2. Leave password field empty
+3. Hide keyboard and click Login
+
+**Expected Result:** Error message displayed - Password required
 
 ---
 
@@ -99,11 +104,12 @@
 | **Priority** | Medium |
 | **Marker** | `@negative` |
 
-| Step | Action | Expected Result |
-|------|--------|-----------------|
-| 1 | Enter unregistered email: `unregistered@test.com` | Email field populated |
-| 2 | Enter password: `password123` | Password field populated |
-| 3 | Hide keyboard and click Login | Error message displayed |
+**Test Steps:**
+1. Enter unregistered email: `unregistered@test.com`
+2. Enter password: `password123`
+3. Hide keyboard and click Login
+
+**Expected Result:** Error message displayed for unregistered user
 
 ---
 
@@ -116,11 +122,12 @@
 | **Priority** | Medium |
 | **Marker** | `@boundary` |
 
-| Step | Action | Expected Result |
-|------|--------|-----------------|
-| 1 | Enter single character: `a` | Email field shows "a" |
-| 2 | Enter password: `password123` | Password field populated |
-| 3 | Hide keyboard and click Login | Error message displayed |
+**Test Steps:**
+1. Enter single character: `a`
+2. Enter password: `password123`
+3. Hide keyboard and click Login
+
+**Expected Result:** Error message displayed for invalid email
 
 ---
 
@@ -131,11 +138,12 @@
 | **Priority** | Medium |
 | **Marker** | `@boundary` |
 
-| Step | Action | Expected Result |
-|------|--------|-----------------|
-| 1 | Enter 256+ char email: `aaa...@test.com` | Email field populated |
-| 2 | Enter password: `password123` | Password field populated |
-| 3 | Hide keyboard and click Login | App handles gracefully (error or stays on page) |
+**Test Steps:**
+1. Enter 256+ character email: `aaa...@test.com`
+2. Enter password: `password123`
+3. Hide keyboard and click Login
+
+**Expected Result:** App handles gracefully (error displayed or stays on login page)
 
 ---
 
@@ -148,12 +156,13 @@
 | **Priority** | Medium |
 | **Marker** | `@ui` |
 
-| Step | Action | Expected Result |
-|------|--------|-----------------|
-| 1 | Enter invalid email: `invalid@test.com` | Email field populated |
-| 2 | Enter password: `wrongpass` | Password field populated |
-| 3 | Hide keyboard and click Login | Error message displayed |
-| 4 | Verify error message element | Error visible with text content |
+**Test Steps:**
+1. Enter invalid email: `invalid@test.com`
+2. Enter password: `wrongpass`
+3. Hide keyboard and click Login
+4. Verify error message element
+
+**Expected Result:** Error message is visible and contains descriptive text
 
 ---
 
@@ -164,12 +173,13 @@
 | **Priority** | Low |
 | **Marker** | `@ui` |
 
-| Step | Action | Expected Result |
-|------|--------|-----------------|
-| 1 | Enter email: `bob@example.com` | Email field populated |
-| 2 | Enter password: `10203040` | Password field populated |
-| 3 | Hide keyboard and click Login | Loading indicator appears |
-| 4 | Wait 2 seconds | Login completes (success or error) |
+**Test Steps:**
+1. Enter email: `bob@example.com`
+2. Enter password: `10203040`
+3. Hide keyboard and click Login
+4. Wait 2 seconds for completion
+
+**Expected Result:** Login completes successfully (success page or error displayed)
 
 ---
 
@@ -182,11 +192,12 @@
 | **Priority** | High |
 | **Marker** | `@security` |
 
-| Step | Action | Expected Result |
-|------|--------|-----------------|
-| 1 | Enter password: `TestPassword123` | Password masked with dots |
-| 2 | Verify password is masked | Password characters hidden |
-| 3 | Click visibility toggle | Password becomes visible/hidden |
+**Test Steps:**
+1. Enter password: `TestPassword123`
+2. Verify password is masked
+3. Click visibility toggle icon
+
+**Expected Result:** Password is initially masked and toggle changes visibility
 
 ---
 
@@ -197,13 +208,12 @@
 | **Priority** | Medium |
 | **Marker** | `@security` |
 
-| Step | Action | Expected Result |
-|------|--------|-----------------|
-| 1 | Enter fake email: `fake0@test.com` | Email field populated |
-| 2 | Enter wrong password: `wrongpass` | Password field populated |
-| 3 | Click Login, get error, clear fields | Error displayed, fields cleared |
-| 4 | Repeat steps 1-3 two more times | App handles gracefully |
-| 5 | Verify app state after 3 failures | Error displayed or login button visible |
+**Test Steps:**
+1. Enter fake email and wrong password
+2. Click Login and get error
+3. Clear fields and repeat 2 more times (3 total attempts)
+
+**Expected Result:** App handles multiple failed attempts gracefully (error displayed or login button remains visible)
 
 ---
 
