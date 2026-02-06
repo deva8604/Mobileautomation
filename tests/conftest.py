@@ -2,6 +2,7 @@
 Pytest fixtures for mobile automation tests.
 """
 import pytest
+import time
 from utils.driver_factory import DriverFactory
 from pages.login_page import LoginPage
 
@@ -18,14 +19,21 @@ def driver():
 def login_page(driver):
     """
     Fixture for LoginPage object.
-    Navigates to login screen before each test.
+    Logs out if logged in, then navigates to login page.
     """
-    try:
-        driver.terminate_app("com.saucelabs.mydemoapp.rn")
-        driver.activate_app("com.saucelabs.mydemoapp.rn")
-    except Exception:
-        pass
-    
     page = LoginPage(driver)
+    
+    # If on login page already, just return
+    if page.is_on_login_page():
+        return page
+    
+    # If logged in (on products page), logout first
+    if page.is_logged_in():
+        page.full_logout()
+        time.sleep(2)
+    
+    # Navigate to login screen
     page.navigate_to_login()
+    time.sleep(1)
+    
     return page

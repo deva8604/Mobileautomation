@@ -56,7 +56,7 @@ emulator -avd Medium_Phone_API_36.1
 appium --address 127.0.0.1 --port 4723
 
 # 3. Run tests
-cd c:\Users\lenovo\Desktop\Mobautomation
+cd "c:\Users\lenovo\Documents\Mobautomation 2\Mobileautomation"
 python -m pytest tests/ -v
 ```
 
@@ -112,4 +112,4 @@ python -m pytest tests/ -m security -v
 
 ## 📊 Test Results
 
-Latest run: **9 passed, 3 failed** (4 min 15 sec)
+Latest run: **12 passed** (3 min 42 sec)
