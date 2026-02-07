@@ -24,7 +24,8 @@ Mobautomation/
 │   ├── __init__.py
 │   └── driver_factory.py       # Appium Driver
 ├── docs/
-│   └── TEST_PLAN.md
+│   ├── TEST_PLAN.md
+│   └── TEST_REPORT.md
 ├── pytest.ini
 ├── requirements.txt
 └── README.md
@@ -113,3 +114,5 @@ python -m pytest tests/ -m security -v
 ## 📊 Test Results
 
 Latest run: **12 passed** (3 min 42 sec)
+
+📄 [View Full Test Report](docs/TEST_REPORT.md)
